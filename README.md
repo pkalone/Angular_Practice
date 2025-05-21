@@ -1,1 +1,1 @@
-# Angular_Practice
+Please note that the project uses Angular 19, which includes standalone components. At the time of implementation, I was not fully familiar with the standalone approach, which impacted the speed and structure of my code.
