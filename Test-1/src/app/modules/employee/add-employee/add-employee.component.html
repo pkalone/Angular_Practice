@@ -1,0 +1,36 @@
+<form [formGroup]="employeeForm" (ngSubmit)="submitForm()">
+
+  <label for="firstName">First Name :</label>
+  <input type="text" formControlName="firstName" id="firstName">
+  <div *ngIf="employeeForm.get('firstName')?.invalid && (employeeForm.get('firstName')?.touched || employeeForm.get('firstName')?.dirty)">
+    <small *ngIf="employeeForm.get('firstName')?.errors?.['required']">First Name is required.</small>
+    <small *ngIf="employeeForm.get('firstName')?.errors?.['minlength']">Minimum 3 characters required.</small>
+    <small *ngIf="employeeForm.get('firstName')?.errors?.['maxlength']">Maximum 300 characters allowed.</small>
+  </div>
+
+  <label for="lastName">Last Name :</label>
+  <input type="text" formControlName="lastName" id="lastName">
+  <div *ngIf="employeeForm.get('lastName')?.invalid && (employeeForm.get('lastName')?.touched || employeeForm.get('lastName')?.dirty)">
+    <small *ngIf="employeeForm.get('lastName')?.errors?.['required']">Last Name is required.</small>
+    <small *ngIf="employeeForm.get('lastName')?.errors?.['minlength']">Minimum 3 characters required.</small>
+    <small *ngIf="employeeForm.get('lastName')?.errors?.['maxlength']">Maximum 300 characters allowed.</small>
+  </div>
+
+  <label for="technology">Technology:</label>
+  <input type="text" formControlName="technology" id="technology">
+  <div *ngIf="employeeForm.get('technology')?.invalid && (employeeForm.get('technology')?.touched || employeeForm.get('technology')?.dirty)">
+    <small *ngIf="employeeForm.get('technology')?.errors?.['required']">Technology is required.</small>
+    <small *ngIf="employeeForm.get('technology')?.errors?.['minlength']">Minimum 3 characters required.</small>
+    <small *ngIf="employeeForm.get('technology')?.errors?.['maxlength']">Maximum 3000 characters allowed.</small>
+  </div>
+
+  <label for="noofYearsExperience">No of Years Experience:</label>
+  <input type="number" formControlName="noofYearsExperience" id="noofYearsExperience">
+  <div *ngIf="employeeForm.get('noofYearsExperience')?.invalid && (employeeForm.get('noofYearsExperience')?.touched || employeeForm.get('noofYearsExperience')?.dirty)">
+    <small *ngIf="employeeForm.get('noofYearsExperience')?.errors?.['required']">Experience is required.</small>
+    <small *ngIf="employeeForm.get('noofYearsExperience')?.errors?.['min']">Minimum value is 0.</small>
+    <small *ngIf="employeeForm.get('noofYearsExperience')?.errors?.['max']">Maximum value is 50.</small>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
